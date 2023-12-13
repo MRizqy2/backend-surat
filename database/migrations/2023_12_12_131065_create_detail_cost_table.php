@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('detail_cost', function (Blueprint $table) {
             $table->id();
+            $table->foreign('documen_fpc')->on('header_cost');
+            $table->string('kd_barang');
+            $table->string('kd_material');
+            $table->string('nama_material');
+            $table->float('qty_minta')->unsigned();
+            $table->foreign('harga_per_satuan')->references('harga_beli')->on('formula');
             $table->
             $table->timestamps();
         });

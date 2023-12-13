@@ -15,9 +15,13 @@ return new class extends Migration
             // $table->id();
             $table->foreign('documen_frp')->references('documen_frp')->on('header_request');
             $table->string('documen_fpc')->primary();
-            $table->foreign('user_id')->reference('user_id')->on('user_role');
-            $table->int('Jumlah_item');
-
+            $table->foreign('user_id')->reference('user_id')->on('users');
+            $table->integer('Jumlah_item');
+            $table->double('grand_total_est_cost');
+            $table->double('grand_total_cost');
+            $table->text('disetujui_m_sales');
+            $table->text('disetujui_m_finance');
+            $table->text('disetujui_m_purchasing');
             $table->timestamps();
         });
     }
