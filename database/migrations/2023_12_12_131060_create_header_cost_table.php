@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('header_cost', function (Blueprint $table) {
             // $table->id();
-            $table->foreign('documen_frp')->references('documen_frp')->on('header_request');
-            $table->string('documen_fpc')->primary();
-            $table->foreign('user_id')->reference('user_id')->on('user_role');
-            $table->int('Jumlah_item');
+            // $table->string('documen_frp');
+            // $table->foreign('documen_frp')->references('documen_frp')->on('header_request');
+            // $table->string('documen_fpc')->primary();
+            $table->string('user_id');
+            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->integer('Jumlah_item');
 
             $table->timestamps();
         });
