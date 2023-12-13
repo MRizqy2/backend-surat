@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('form_cost', function (Blueprint $table) {
-            $table->id();
+            $table->string('kd_material');
+            $table->string('nama_material');
+            $table->float('qty_minta');
+            $table->bigInteger('harga_beli');
+            $table->bigInteger('total_est_cost');
+            $table->float('qty_terima');
+            $table->bigInteger('total_cost');
             $table->timestamps();
         });
     }

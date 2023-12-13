@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('header_cost', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->foreign('documen_frp')->references('documen_frp')->on('header_request');
+            $table->string('documen_fpc')->primary();
+            $table->foreign('user_id')->reference('user_id')->on('user_role');
+            $table->int('Jumlah_item');
+
             $table->timestamps();
         });
     }

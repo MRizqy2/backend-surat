@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('formula', function (Blueprint $table) {
-            $table->id();
-            $table->string('kd_barang');
+            // $table->id();
+            $table->string('kd_barang')->primary();
             // $table->string('kd_barang')->unique();
             $table->string('nama_barang');
             $table->string('kd_material');

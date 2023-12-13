@@ -16,6 +16,9 @@ return new class extends Migration
             $table->timestamp('tgl_request')->nullable();
             $table->string('user_id');
             $table->foreign('user_id')->references('user_id')->on('users');
+            $table->text('disetujui_m_sales');
+            $table->text('disetujui_m_finance');
+            $table->text('disetujui_m_purchasing');
             $table->timestamps();
         });
     }
